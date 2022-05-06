@@ -108,7 +108,7 @@ if (sk_acceptq_is_full(sk) && inet_csk_reqsk_queue_young(sk) > 1) {
 
 ## 全连接队列  
 
-### 全连接队列大小  
+### 全连接队列大小
 
 全连接队列大小的分配在`net/socket.c`中，计算逻辑如下：  
 
@@ -126,7 +126,7 @@ if ((unsigned int)backlog > somaxconn) {
 
 全连接队列大小会设置为`backlog`和`somaxconn`中较小的值。  
 
-### 全连接队列溢出的条件  
+### 全连接队列溢出的条件
 
 全连接对出的判断就比较简单了，在`net/ipv4/tcp_ipv4.c`中进行了判断：  
 
@@ -137,7 +137,7 @@ if (sk_acceptq_is_full(sk))
 
 即在完成了三次握手，得到一个有效的`synack`时，如果发现全连接队列满了，则将其丢弃。  
 
-### 全连接队列溢出的场景  
+### 全连接队列溢出的场景
 
 1. 短时间内大量连接完成三次握手，队列放不下；  
 2. 业务层`accept()`速度较慢，全连接队列积压。  
