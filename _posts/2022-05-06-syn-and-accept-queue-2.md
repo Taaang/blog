@@ -90,7 +90,7 @@ somaxconn=20480
 
 此时，再通过客户端并发建连2万次，来看看实际的效果。  
 
-![](https://raw.githubusercontent.com/Taaang/blog/master/assets/images/post_imgs/syn_accept_queue_overflowed/2.git)
+![](https://raw.githubusercontent.com/Taaang/blog/master/assets/images/post_imgs/syn_accept_queue_overflowed/2.gif)
 
 可以看到`SYNs to LISTEN sockets dropped`发生了变化，从**307904**增加到了**308069**，说明整个过程半连接队列溢出了165次，之后通过几轮的重试，最终完成2万个连接的建立。  
 
