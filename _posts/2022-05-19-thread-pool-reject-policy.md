@@ -356,9 +356,7 @@ static class ForceQueuePolicy extends EsRejectedExecutionHandler {
 
 该策略在线程池未关闭，且使用了ES自定义的`ExecutorScalingQueue`的任务队列时，会强制将任务放入线程池队列中。其中，`ExecutorScalingQueue`也是继承自`LinkedTransferQueue`，最终调用put方法以ASYNC模式放入任务队列中。  
 
-> 看上去也是`forceExecution`，而且最终都是使用`LinkedTransferQueue`的put方法以ASYNC模式非阻塞入队列。
->  
-> 那么`EsAbortPolicy`和`ForceQueuePolicy`有什么不同呢？
+> 看上去也是`forceExecution`，而且最终都是使用`LinkedTransferQueue`的put方法以ASYNC模式非阻塞入队列。那么`EsAbortPolicy`和`ForceQueuePolicy`有什么不同呢？
 >  
 > 两者有很多相似点，都有`forceExecution`的判断，而且拒绝时都是抛出`RejectedExecutionException`。
 >  
@@ -404,7 +402,7 @@ public class RejectedExecutionChainPolicy implements RejectedExecutionHandler {
 | Dubbo | AbortPolicyWithReport | 抛出`RejectedExecutionException`异常，并报告溢出，记录下JVM线程堆栈|
 | Netty | RejectedExecutionHandlers | 逻辑与`AbortPolicy`一致，抛出异常，封装为单例Handler使用|
 | Doris | LogDiscardPolicy | 逻辑与`DiscardPolicy`一致，丢弃任务，并记录warn日志|
-| Doris | BlockedPolicy | 尽最大努力尝试将任务放入队列执行，最多等待60s，超时后记录warn日志，并丢弃任务||
+| Doris | BlockedPolicy | 尽最大努力尝试将任务放入队列执行，最多等待60s，超时后记录warn日志，并丢弃任务|
 | Elastic | EsAbortPolicy | 正常情况下与`AbortPolicy`一致，如果线程标记强制执行，则强制执行或放入任务队列，实际入队列的表现取决于队列类型，可能阻塞或立即返回|
 | Elastic | ForceQueuePolicy | 默认强制执行任务或放入任务队列，异步非阻塞 |
 | 其他 | PolicyChain | 策略链，包含多种拒绝策略，根据条件与节点处理结果决定最终表现 |
