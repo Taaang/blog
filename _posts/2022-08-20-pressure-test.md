@@ -174,9 +174,7 @@ tags:
 > https://github.com/arthur-zhang/ctop  
 >  
 > 关于Load的计算逻辑可以参考这里  
-> [Linux Load Averages: Solving the Mystery](https://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html)  
-
-### 基础设施环境验证  
+> [Linux Load Averages: Solving the Mystery](https://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html)   
 
 ## 总结  
 
