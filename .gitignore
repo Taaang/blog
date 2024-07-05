@@ -1,3 +1,4 @@
 vendor
 .jekyll-cache
 .idea
+.DS_Store
