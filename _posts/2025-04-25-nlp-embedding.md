@@ -4,9 +4,11 @@ date: 2025-04-25
 categories:
 - NLP
 - Embedding
+- 学习笔记
 tags:
 - NLP
 - Embedding
+- 学习笔记
 ---
 
 ## 前言
@@ -39,7 +41,7 @@ tags:
 
 ### 从现实世界到数据的映射  
 模型的输入是一连串的数字，即向量。  
-![](https://github.com/Taaang/blog/blob/master/assets/images/post_imgs/nlp_embedding/4.png?raw=true){:height="500" width="500"}
+![](https://github.com/Taaang/blog/blob/master/assets/images/post_imgs/nlp_embedding/4.png?raw=true){:height="500" width="500"}  
 ![](https://github.com/Taaang/blog/blob/master/assets/images/post_imgs/nlp_embedding/5.png?raw=true){:height="500" width="500"}
 文字“我爱上班” -> ？-> 向量  
 花  ->  图片 -> ？-> 向量  
