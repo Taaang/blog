@@ -139,6 +139,7 @@ Qdrant 支持 In-Memory 和 Memmap 两种存储形式，分别对应存储在内
 ![](https://github.com/Taaang/blog/blob/master/assets/images/post_imgs/vectordb_test/12.png?raw=true){:height="500" width="500"}
 
 * 磁盘占用拆分  
+
 | 类型            | 占用大小   | 备注                                        |
 |---------------|--------|-------------------------------------------|
 | payload       | 142MB  | 单 payload字段，类型 integer，数据量 100W           |
